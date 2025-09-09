@@ -1,0 +1,497 @@
+:root {
+    --bg: #0b1020;
+    /* fond nuit */
+    --bg2: #0f1733;
+    /* fond dégradé */
+    --pri: #00e5ff;
+    /* cyan néon */
+    --acc: #00ffa8;
+    /* vert néon */
+    --hot: #ff3e7f;
+    /* rose */
+    --ink: #e6f7ff;
+    /* texte clair */
+    --mut: #89a8b3;
+    /* texte secondaire */
+    --card: #111a31cc;
+    /* cartes translucides */
+    --glass: rgba(255, 255, 255, .08);
+    --glow: 0 0 18px rgba(0, 229, 255, .55), 0 0 38px rgba(0, 229, 255, .25);
+}
+
+* {
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+html,
+body {
+    height: 100%
+}
+
+body {
+    margin: 0;
+    font-family: system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Inter, Arial, sans-serif;
+    color: var(--ink);
+    background: radial-gradient(1200px 700px at 70% -10%, #12224a 0%, transparent 60%), linear-gradient(180deg, var(--bg), var(--bg2) 35%, var(--bg) 100%);
+    overflow-x: hidden;
+}
+
+/* ====== LAYOUT ====== */
+header {
+    position: fixed;
+    inset: 0 0 auto 0;
+    height: 64px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 18px;
+    background: linear-gradient(#0b1020cc, #0b102000);
+    border-bottom: 1px solid #ffffff12;
+    z-index: 50;
+    backdrop-filter: blur(6px);
+}
+
+.brand {
+    display: flex;
+    gap: 12px;
+    align-items: center
+}
+
+.brand .logo > img {
+    width: 34px;
+    height: 34px;
+    border-radius: 10px;
+    /* background-image: url('/asset/img/LOGO.jpg'); */
+    /* background: conic-gradient(from 180deg, var(--pri), var(--acc), var(--hot), var(--pri)); */
+    box-shadow: var(--glow)
+}
+
+.brand h1 {
+    font-size: 18px;
+    margin: 0
+}
+
+nav a {
+    color: var(--ink);
+    text-decoration: none;
+    margin: 0 10px;
+    opacity: .9
+}
+
+nav a:hover {
+    color: white;
+    text-shadow: 0 0 10px #fff3
+}
+
+section.hero{
+    height: 100vh;
+}
+
+.hero {
+    position: relative;
+    /* min-height: 100svh; */
+    display: grid;
+    place-items: center;
+    padding: 92px 18px 120px
+}
+
+.hero-inner {
+    max-width: 1100px;
+    width: 100%;
+    display: grid;
+    /* grid-template-columns: 1.2fr .8fr; */
+    gap: 28px
+}
+
+@media (max-width:900px) {
+    .hero-inner {
+        grid-template-columns: 1fr
+    }
+}
+
+.card {
+    background: var(--card);
+    border: 1px solid #ffffff1a;
+    border-radius: 22px;
+    padding: 26px;
+    box-shadow: 0 8px 30px #0008;
+    backdrop-filter: saturate(1.2) blur(4px)
+}
+
+h2 {
+    font-size: clamp(28px, 3vw, 44px);
+    margin: 0 0 12px
+}
+
+p {
+    color: var(--mut);
+    line-height: 1.6
+}
+
+.cta {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+    margin-top: 18px
+}
+
+.btn {
+    appearance: none;
+    border: none;
+    border-radius: 16px;
+    padding: 12px 18px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: .25s transform, .25s box-shadow;
+    box-shadow: 0 6px 14px #0008
+}
+
+.btn.primary {
+    background: linear-gradient(135deg, var(--pri), #00b0ff);
+    color: #001217;
+    box-shadow: 0 0 0 2px #00c7ff55, var(--glow)
+}
+
+.btn.ghost {
+    background: transparent;
+    color: var(--ink);
+    border: 1px solid #ffffff2a
+}
+
+.btn:hover {
+    transform: translateY(-2px)
+}
+
+.stats {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+    margin-top: 22px
+}
+
+.stat {
+    padding: 14px;
+    border: 1px dashed #3dd9ff38;
+    border-radius: 14px
+}
+
+.stat b {
+    display: block;
+    font-size: 24px;
+    color: white
+}
+
+section {
+    position: relative;
+    padding: 80px 18px
+}
+
+.wrap {
+    max-width: 1100px;
+    margin: auto
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px
+}
+
+@media (max-width:900px) {
+    .grid {
+        grid-template-columns: 1fr
+    }
+}
+
+.club {
+    position: relative;
+    overflow: hidden
+}
+
+.club h3 {
+    margin: 0 0 6px
+}
+
+footer {
+    position: relative;
+    padding: 60px 18px 90px;
+    background: linear-gradient(180deg, transparent, #0b1020cc 40%, #05070e 100%);
+    border-top: 1px solid #ffffff0f
+}
+
+.social {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap
+}
+
+.social a {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 14px;
+    border-radius: 12px;
+    border: 1px solid #ffffff22;
+    text-decoration: none;
+    color: var(--ink);
+    background: var(--glass)
+}
+
+.social svg {
+    width: 18px;
+    height: 18px
+}
+
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 12px
+}
+
+@media (max-width:900px) {
+    .gallery {
+        grid-template-columns: repeat(2, 1fr)
+    }
+}
+@media (max-width:400px) {
+    .gallery {
+        grid-template-columns: repeat(1, 1fr)
+    }
+    .gallery .ph{
+        width: 90%;
+    }
+}
+.gallery .ph {
+    aspect-ratio: 16/10;
+    border-radius: 16px;
+    background: #ffffff0f;
+    border: 1px solid #ffffff12;
+    position: relative;
+    overflow: hidden; 
+}
+
+.gallery .ph img{transition: .2s;}
+
+.gallery .ph img:hover{
+    transition: .2s;
+    transform: scale(1.1);
+}
+
+/* .gallery .ph::after {
+    content: "Ajouter image";
+    position: absolute;
+    inset: auto 6px 6px auto;
+    font-size: 12px;
+    color: #fff9;
+    background: #0006;
+    padding: 4px 8px;
+    border-radius: 10px */
+}
+
+/* ====== ANIMATIONS GLOBAL ====== */
+/* Scintillement doux sur les titres */
+.sparkle {
+    text-shadow: 0 0 20px rgba(0, 229, 255, .6), 0 0 40px rgba(0, 229, 255, .2);
+    animation: sparkle 5s ease-in-out infinite;
+    display: inline-block
+}
+
+@keyframes sparkle {
+
+    0%,
+    100% {
+        filter: drop-shadow(0 0 0 rgba(0, 229, 255, 0))
+    }
+
+    50% {
+        filter: drop-shadow(0 0 14px rgba(0, 229, 255, .7))
+    }
+}
+
+/* ====== PCB BACKGROUND (SVG) ====== */
+.pcb {
+    position: fixed;
+    inset: 0;
+    z-index: -2;
+    opacity: .8;
+    pointer-events: none;
+    background: radial-gradient(800px 400px at 20% 10%, #0c1b38 0%, transparent 60%);
+    mask: linear-gradient(180deg, #000 50%, transparent 100%);
+}
+
+.pcb svg {
+    width: 1800px;
+    height: auto;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%) scale(1.2);
+    opacity: .9
+}
+
+.trace {
+    fill: none;
+    stroke: #1bd3ff;
+    stroke-width: 2;
+    stroke-linecap: round;
+    filter: drop-shadow(0 0 3px #00e5ff88)
+}
+
+.trace.dim {
+    stroke: #1086a8
+}
+
+.pulse {
+    stroke-dasharray: 6 12;
+    animation: flow 3s linear infinite
+}
+
+@keyframes flow {
+    to {
+        stroke-dashoffset: -200
+    }
+}
+
+.node {
+    fill: #00ffd0;
+    filter: drop-shadow(0 0 6px #00ffd0aa)
+}
+
+.node.blink {
+    animation: blink 1.8s ease-in-out infinite
+}
+
+@keyframes blink {
+    50% {
+        opacity: .2
+    }
+}
+
+/* ====== WAVES (SVG + parallax) ====== */
+.waves {
+    position: fixed;
+    inset: auto 0 0 0;
+    height: 220px;
+    z-index: -1;
+    pointer-events: none
+}
+
+.wave {
+    position: absolute;
+    inset: auto 0 0 0;
+    height: 220px;
+    opacity: .6
+}
+
+.wave svg {
+    width: 200%;
+    height: 100%
+}
+
+.wave:nth-child(1) {
+    animation: drift 14s linear infinite
+}
+
+.wave:nth-child(2) {
+    animation: drift 22s linear infinite reverse;
+    opacity: .45
+}
+
+.wave:nth-child(3) {
+    animation: drift 38s linear infinite;
+    opacity: .3
+}
+
+@keyframes drift {
+    to {
+        transform: translateX(-50%)
+    }
+}
+
+/* ====== SNOW (Canvas) ====== */
+canvas.snow {
+    position: fixed;
+    inset: 0;
+    z-index: -1;
+    pointer-events: none;
+    mix-blend-mode: screen;
+    opacity: .6
+}
+
+/* ====== DATA PARTICLES (pseudo elements) ====== */
+.data-rain::before,
+.data-rain::after {
+    content: "";
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: -1;
+    opacity: .35;
+    background: repeating-linear-gradient(to bottom, transparent 0 28px, rgba(0, 255, 200, .06) 28px 30px)
+}
+
+.data-rain::after {
+    opacity: .2;
+    background: radial-gradient(2px 2px at 20% 10%, #00ffd0 50%, transparent 60%), radial-gradient(2px 2px at 70% 30%, #00e5ff 50%, transparent 60%), radial-gradient(2px 2px at 40% 80%, #00ffd0 50%, transparent 60%);
+    filter: blur(0.5px)
+}
+
+/* ====== ECO TOGGLE ====== */
+.tune {
+    position: fixed;
+    right: 16px;
+    bottom: 16px;
+    z-index: 60;
+    display: flex;
+    gap: 8px;
+    align-items: center;
+    background: #0e1832cc;
+    border: 1px solid #ffffff2a;
+    padding: 8px 12px;
+    border-radius: 14px;
+    backdrop-filter: blur(8px)
+}
+
+.tune input {
+    accent-color: var(--pri)
+}
+
+.tune label {
+    font-size: 13px;
+    color: #cfe8ff
+}
+
+/* ====== HIGHLIGHT CODE-LIKE ====== */
+.mono {
+    font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+    color: #d8f7ff
+}
+
+/* ====== SCROLL CUES ====== */
+.scrollcue {
+    position: absolute;
+    left: 50%;
+    bottom: 24px;
+    transform: translateX(-50%);
+    font-size: 12px;
+    color: #cfe;
+    opacity: .8
+}
+
+.scrollcue svg {
+    width: 18px;
+    height: 18px;
+    animation: bop 1.4s ease-in-out infinite
+}
+
+@keyframes bop {
+    50% {
+        transform: translateY(4px)
+    }
+}
+
+/* ====== CARDS subtle glow ====== */
+.card.glow {
+    box-shadow: 0 0 0 1px #00e5ff33, 0 0 80px #00e5ff12 inset
+}

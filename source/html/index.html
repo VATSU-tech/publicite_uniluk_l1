@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <script src="../js/app.js" defer></script>
+    <link rel="stylesheet" href="../style/style.css" />
+    <title>Pre-inscription UNILUK • VATSU</title>
+    <meta name="description"
+        content="UNILUK invite les nouveaux étudiants passionnés d'informatique et d'économie de gestion. Animations: vagues, neige, circuit imprimé lumineux, particules." />
+
+</head>
+
+<body class="data-rain">
+
+    <!-- ====== PCB BACKGROUND ====== -->
+    <div class="pcb" aria-hidden="true">
+        <svg viewBox="0 0 1200 800">
+            <!-- Traces -->
+            <path class="trace dim" d="M40 120 C 240 60, 380 240, 560 140 S 840 40, 1140 120" />
+            <path class="trace pulse" d="M60 280 C 240 200, 420 360, 600 260 S 900 200, 1140 260" />
+            <path class="trace" d="M100 420 C 180 380, 260 520, 360 460 S 540 360, 760 440 S 980 560, 1120 520" />
+            <path class="trace pulse" d="M80 600 C 220 540, 380 700, 560 620 S 820 520, 1100 620" />
+
+            <!-- Nodes -->
+            <circle class="node blink" cx="120" cy="120" r="3" />
+            <circle class="node" cx="360" cy="170" r="3" />
+            <circle class="node blink" cx="560" cy="140" r="4" />
+            <circle class="node" cx="920" cy="90" r="3" />
+            <circle class="node blink" cx="180" cy="420" r="4" />
+            <circle class="node" cx="360" cy="460" r="3" />
+            <circle class="node blink" cx="760" cy="440" r="4" />
+            <circle class="node" cx="980" cy="560" r="3" />
+            <circle class="node blink" cx="220" cy="600" r="4" />
+            <circle class="node" cx="560" cy="620" r="3" />
+            <circle class="node blink" cx="980" cy="620" r="4" />
+        </svg>
+    </div>
+
+    <!-- ====== WAVES ====== -->
+    <div class="waves" aria-hidden="true">
+        <div class="wave">
+            <svg viewBox="0 0 1440 320" preserveAspectRatio="none">
+                <path fill="#0c1a35" fill-opacity="1"
+                    d="M0,160L60,144C120,128,240,96,360,117.3C480,139,600,213,720,229.3C840,245,960,203,1080,170.7C1200,139,1320,117,1380,106.7L1440,96L1440,320L1380,320C1320,320,1200,320,1080,320C960,320,840,320,720,320C600,320,480,320,360,320C240,320,120,320,60,320L0,320Z">
+                </path>
+            </svg>
+        </div>
+        <div class="wave">
+            <svg viewBox="0 0 1440 320" preserveAspectRatio="none">
+                <path fill="#0a1530" fill-opacity="0.9"
+                    d="M0,64L80,69.3C160,75,320,85,480,117.3C640,149,800,203,960,208C1120,213,1280,171,1360,149.3L1440,128L1440,320L1360,320C1280,320,1120,320,960,320C800,320,640,320,480,320C320,320,160,320,80,320L0,320Z">
+                </path>
+            </svg>
+        </div>
+        <div class="wave">
+            <svg viewBox="0 0 1440 320" preserveAspectRatio="none">
+                <path fill="#071026" fill-opacity="0.8"
+                    d="M0,32L48,69.3C96,107,192,181,288,202.7C384,224,480,192,576,165.3C672,139,768,117,864,112C960,107,1056,117,1152,128C1248,139,1344,149,1392,154.7L1440,160L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z">
+                </path>
+            </svg>
+        </div>
+    </div>
+
+    <!-- ====== SNOW ====== -->
+    <canvas class="snow" id="snow"></canvas>
+
+    <!-- ====== HEADER ====== -->
+    <header>
+        <div class="brand">
+            <div class="logo" aria-hidden="true"> <img src="/asset/img/LOGO.jpg" width="30px" height="30px" alt=""></div>
+            <h1>UNILUK • <span class="mono">Etudier & Réussir</span></h1>
+        </div>
+        <nav>
+            <a href="#accueil">Accueil</a>
+            <a href="#gaci">GACI</a>
+            <a href="#greg">GREG</a>
+            <a href="#galerie">Galerie</a>
+            <a href="#contact">Contact</a>
+        </nav>
+    </header>
+
+    <!-- ====== HERO ====== -->
+    <section id="accueil" class="hero">
+        <div class="hero-inner">
+            <div class="card glow">
+                <h2>
+                    Deviens développeur, comptable à l’<span class="sparkle">UNILUK</span>
+                </h2>
+                <p>
+                    La <b>Faculté des Sciences Informatiques</b> et la <b>Faculté d’Économie & Gestion</b> t’ouvrent les
+                    portes de l’innovation :
+                    algorithmes, projets <span class="mono">IoT</span>, data, entrepreneuriat…
+                    Découvre un campus où les <b>idées circulent</b> comme des signaux sur un <b>circuit imprimé</b>.
+                </p>
+                <div class="cta">
+                    <a class="btn primary" href="#contact">Je m’inscris</a>
+                    <a class="btn ghost" href="#programme">Voir le programme</a>
+                </div>
+                <div class="stats">
+                    <div class="stat"><b id="stat-1">0</b><span>Heures de projets</span></div>
+                    <div class="stat"><b id="stat-2">0</b><span>Clubs actifs (GACI, GREG)</span></div>
+                    <div class="stat"><b id="stat-3">0</b><span>Mentors & encadreurs</span></div>
+                </div>
+            </div>
+        </div>
+        <div class="scrollcue" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none">
+                <path d="M12 5v14M12 19l-5-5M12 19l5-5" stroke="#9feaff" stroke-width="1.5" stroke-linecap="round" />
+            </svg>
+            <div>Fais défiler</div>
+        </div>
+    </section>
+
+    <!-- ====== PROGRAMME ====== -->
+    <section id="programme">
+        <div class="wrap">
+            <h2>Pourquoi UNILUK ?</h2>
+            <div class="grid">
+                <div class="card">
+                    <h3>Apprentissage par projets</h3>
+                    <p>Construis des applications, des sites, des systèmes IoT (ESP8266/ESP32/Arduino) et des dashboards
+                        de gestion. Ton <span class="mono">portfolio</span> démarre ici.</p>
+                </div>
+                <div class="card">
+                    <h3>Clubs & communautés</h3>
+                    <p>Rejoins <b>GACI</b> pour le code et <b>GREG</b> pour l’analyse économique. Ateliers, hackathons,
+                        simulations de gestion.</p>
+                </div>
+                <div class="card">
+                    <h3>Encadrement & carrière</h3>
+                    <p>Mentors expérimentés, soft skills, préparation à l’emploi et à l’entrepreneuriat local et
+                        international.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ====== CLUBS ====== -->
+    <section id="gaci">
+        <div class="wrap">
+            <div class="card club">
+                <h2>Club <span class="mono">GACI</span></h2>
+                <p>Le <b>Groupe d'Analyste et Chercheur en Informatique</b> organise des ateliers (web, mobile, IA), des
+                    challenges d’algorithmes, et des projets open-source. Débute ou progresse rapidement !</p>
+                <div class="cta">
+                    <a class="btn primary" href="#contact">Rejoindre GACI</a>
+                    <a class="btn ghost" href="#galerie">Voir les projets</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="greg">
+        <div class="wrap">
+            <div class="card club">
+                <h2>Club <span class="mono">GREG</span></h2>
+                <p>Le <b>Groupe de Recherche en Économie et Gestion</b> développe des études de marché, des simulations
+                    financières, et des solutions pour l’agro-business</p>
+                <div class="cta">
+                    <a class="btn primary" href="#contact">Rejoindre GREG</a>
+                    <a class="btn ghost" href="#galerie">Voir les événements</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ====== GALERIE ====== -->
+    <section id="galerie">
+        <div class="wrap">
+            <h2>Galerie</h2>
+            <div class="gallery">
+                <div class="ph" title="Remplacez par vos images (campus)"><img src="/asset/img/DSC_0277.jpg" width="100%" alt=""></div>
+                <div class="ph" title="Remplacez par vos images (laboratoire)"><img src="/asset/img/DSC_0306.jpg" width="100%" alt=""></div>
+                <div class="ph" title="Remplacez par vos images (événements)"><img src="/asset/img/DSC_0320.jpg" width="100%" alt=""></div>
+                <div class="ph" title="Remplacez par vos images (étudiants)"><img src="/asset/img/DSC_0443.jpg" width="100%" alt=""></div>
+                <div class="ph"><img src="/asset/img/DSC_0453.jpg" width="100%" alt=""></div>
+                <div class="ph"><img src="/asset/img/gentine.jpg" width="100%" alt=""></div>
+                <div class="ph"><img src="/asset/img/jp.jpg" width="100%" alt=""></div>
+                <div class="ph"><img src="/asset/img/vs president.jpg" width="100%" alt=""></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ====== CONTACT ====== -->
+    <footer id="contact">
+        <div class="wrap">
+            <h2>Contact & Inscriptions</h2>
+            <p>📍 Université Adventiste de Lukanga (UNILUK) — Lukanga, RDC</p>
+            <div class="social" style="margin-top:12px">
+                <a href="https://wa.me/+243995716294" target="_blank" rel="noopener">
+                    <svg viewBox="0 0 24 24" fill="none">
+                        <path d="M12 2a10 10 0 00-8.94 14.5L2 22l5.7-1.98A10 10 0 1012 2z" stroke="currentColor"
+                            stroke-width="1.6" />
+                        <path
+                            d="M8.5 9.5c.2 3.3 2.2 5.1 5 6l1.1-.7c.3-.2.7-.6.6-1l-.3-1.2a.8.8 0 00-.9-.6l-1 .2c-.3 0-.6-.2-.7-.5l-.4-.9c-.1-.2 0-.5.2-.6l.7-.7c.3-.3.4-.8.2-1.2l-.6-1.2c-.2-.4-.7-.6-1.1-.5-1.1.3-2.4 1.2-2.8 2.1z"
+                            fill="currentColor" />
+                    </svg>
+                    WhatsApp</a>
+                <a href="#" target="_blank" rel="noopener">
+                    <svg viewBox="0 0 24 24" fill="none">
+                        <path d="M14 9h3V6h-3c-1.7 0-3 1.3-3 3v2H8v3h3v7h3v-7h3l1-3h-4V9c0-.6.4-1 1-1z"
+                            fill="currentColor" />
+                    </svg>
+                    Facebook</a>
+                <a href="mailto:vatsumalambo@gmail.com">
+                    <svg viewBox="0 0 24 24" fill="none">
+                        <path d="M3 6h18v12H3z" stroke="currentColor" />
+                        <path d="M3 7l9 7 9-7" stroke="currentColor" />
+                    </svg>
+                    Email</a>
+                <a href="#" target="_blank" rel="noopener">
+                    <svg viewBox="0 0 24 24" fill="none">
+                        <rect x="3" y="3" width="18" height="18" rx="5" stroke="currentColor" />
+                        <circle cx="12" cy="12" r="4" stroke="currentColor" />
+                        <circle cx="17" cy="7" r="1.2" fill="currentColor" />
+                    </svg>
+                    Instagram</a>
+            </div>
+            <p style="margin-top:16px;color:#95b6c6">© <span id="year"></span> VATSU — Tous droits réservés</p>
+        </div>
+    </footer>
+
+    <!-- ====== ECO MODE TOGGLE ====== -->
+    <div class="tune" style="display: none;">
+        <input id="eco" type="checkbox" />
+        <label for="eco">Mode Éco (réduire les animations)</label>
+    </div>
+
+</body>
+
+</html>
