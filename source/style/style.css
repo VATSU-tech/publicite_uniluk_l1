@@ -22,6 +22,7 @@
 * {
     box-sizing: border-box;
     scroll-behavior: smooth;
+    scrollbar-color: var(--pri) #0b1020;
 }
 
 html,
@@ -52,28 +53,34 @@ header {
     backdrop-filter: blur(6px);
 }
 
-header nav a{
+header nav a {
     transition: .1s;
 }
 
-header nav a:hover{
+header nav a:hover {
     text-shadow: 0 0 1rem var(--pri);
     color: var(--pri);
     transition: .1s;
 }
 
 @media screen and (max-width : 700px) {
-    header{
+    header {
         display: flex;
         flex-direction: column;
     }
-    header nav{
+
+    header nav {
         margin-top: 8px;
         margin-bottom: 8px;
         font-size: .8rem;
         display: flex;
-        text-shadow: 1rem  0 1rem var(--pri);
+        text-shadow: 1rem 0 1rem var(--pri);
     }
+}
+
+p,
+h2 {
+    color: #dcdcdc;
 }
 
 .brand {
@@ -82,7 +89,7 @@ header nav a:hover{
     align-items: center
 }
 
-.brand .logo > img {
+.brand .logo>img {
     width: 34px;
     height: 34px;
     border-radius: 10px;
@@ -108,7 +115,7 @@ nav a:hover {
     text-shadow: 0 0 10px #fff3
 }
 
-section.hero{
+section.hero {
     height: 100vh;
 }
 
@@ -193,13 +200,14 @@ p {
     gap: 12px;
     margin-top: 22px
 }
-@media  screen and (max-width: 450px) {
+
+@media screen and (max-width: 450px) {
     .stats {
-    display: flex;
-    flex-direction: column;
-    /* grid-template-columns: repeat(3, 1fr); */
-    gap: 12px;
-}
+        display: flex;
+        flex-direction: column;
+        /* grid-template-columns: repeat(3, 1fr); */
+        gap: 12px;
+    }
 }
 
 .stat {
@@ -286,31 +294,86 @@ footer {
         grid-template-columns: repeat(2, 1fr)
     }
 }
+
 @media (max-width:400px) {
     .gallery {
         grid-template-columns: repeat(1, 1fr)
     }
-    .gallery .ph{
+
+    .gallery .ph {
         width: 90%;
     }
 }
+
 .gallery .ph {
     aspect-ratio: 16/10;
     border-radius: 16px;
     background: #ffffff0f;
     border: 1px solid #ffffff12;
     position: relative;
-    overflow: hidden; 
+    overflow: hidden;
+    z-index: 1;
 }
 
-.gallery .ph img{transition: .2s;}
+.gallery .ph img {
+    transition: .2s;
+}
 
-.gallery .ph img:hover{
+.gallery .ph:hover {
+    transition: .2s;
+    box-shadow: 0 0 .5rem var(--pri);
+    z-index: 0;
+}
+
+.gallery .ph img:hover {
     transition: .2s;
     transform: scale(1.1);
 }
+.google div{
+    position: absolute; 
+    display: flex;
+    gap: 1rem;
+    z-index: 200000;
+    top: 1rem;
+    left: 1rem;
+    flex-direction: column;
+}
+.google div a{
+    border: .1px solid var(var(--mut));
+    font-size: 1rem;
+    text-decoration: none;
+    color: var(--mut);
+    background: var(--bg2);
+    padding: 4px 8px;
+    border-radius: 10px;
+    transition: 1s;
+}
 
+.google div a:hover{
+    color: var(--pri);
+    border: .1px solid var(--pri);
+}
 
+/* .google::after {
+    content: "Ajouter image";
+    position: absolute;
+    inset: auto 6px 6px auto;
+    font-size: 12px;
+    color: #fff9;
+    background: #0006;
+    padding: 4px 8px;
+    border-radius: 10px
+}
+.google::before {
+    content: "Ajouter image";
+    position: absolute;
+    inset: auto 6px 6px auto;
+    font-size: 12px;
+    color: #fff9;
+    background: #0006;
+    padding: 4px 8px;
+    border-radius: 10px
+} */
 
 /* ====== ANIMATIONS GLOBAL ====== */
 /* Scintillement doux sur les titres */
@@ -517,4 +580,19 @@ canvas.snow {
 /* ====== CARDS subtle glow ====== */
 .card.glow {
     box-shadow: 0 0 0 1px #00e5ff33, 0 0 80px #00e5ff12 inset
+}
+
+::-webkit-scrollbar {
+    width: 50px;
+    background: var(--bg);
+    transition: width .5s;
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--accent);
+    border-radius: 9px;
+}
+
+::-webkit-scrollbar:hover {
+    width: 12px;
 }

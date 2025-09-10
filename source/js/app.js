@@ -81,3 +81,16 @@
       if(target){ e.preventDefault(); target.scrollIntoView({behavior:'smooth', block:'start'}); }
     });
    }); 
+
+  //  let liens = []
+  //  const linksConstainer = qs('#google > div')
+  //  console.log(linksConstainer);
+   
+
+  //  fetch("/db/googleAlbum/googleAlbumAPI.json")
+  //  .then( d => d.json())
+  //  .then(d => liens.push(...d))
+  //  .then( liens.map( l => {
+  //   linksConstainer.innerHTML = `
+  //   <a href='${l.lien}' target='_blank' rel='noopenner'>Album ${l.id}</a>`
+  //  }))
