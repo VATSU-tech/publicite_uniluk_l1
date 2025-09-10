@@ -41,21 +41,38 @@ body {
 header {
     position: fixed;
     inset: 0 0 auto 0;
-    height: 64px;
+    /* height: 64px; */
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 0 18px;
+    padding: 1rem 18px;
     background: linear-gradient(#0b1020cc, #0b102000);
     border-bottom: 1px solid #ffffff12;
     z-index: 50;
     backdrop-filter: blur(6px);
 }
 
+header nav a{
+    transition: .1s;
+}
+
+header nav a:hover{
+    text-shadow: 0 0 1rem var(--pri);
+    color: var(--pri);
+    transition: .1s;
+}
+
 @media screen and (max-width : 700px) {
     header{
         display: flex;
         flex-direction: column;
+    }
+    header nav{
+        margin-top: 8px;
+        margin-bottom: 8px;
+        font-size: .8rem;
+        display: flex;
+        text-shadow: 1rem  0 1rem var(--pri);
     }
 }
 
